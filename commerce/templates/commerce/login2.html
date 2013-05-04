@@ -1,40 +1,9 @@
-<!DOCTYPE html>
 <html>
 <head>
 <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-<link href="{{STATIC_URL}}bootstrap/css/bootstrap.css" rel="stylesheet">
-    <style type="text/css">
-      body {
-        padding-top: 20px;
-        padding-bottom: 40px;
-      }
-
-      /* Custom container */
-      .container-narrow {
-        margin: 0 auto;
-        max-width: 700px;
-      }
-      .container-narrow > hr {
-        margin: 30px 0;
-      }
-
-      /* Main marketing message and sign up button */
-      .jumbotron {
-        margin: 60px 0;
-        text-align: center;
-      }
-      .jumbotron h1 {
-        font-size: 72px;
-        line-height: 1;
-      }
-      .jumbotron .btn {
-        font-size: 21px;
-        padding: 14px 24px;
-      }    
-
-    </style>
-<link href="{{STATIC_URL}}bootstrap/css/bootstrap-responsive.css" rel="stylesheet"></head>
+</head>
 <body>
+<div id="fb-root"></div>
 <script>
   window.fbAsyncInit = function() {
   FB.init({
@@ -88,58 +57,19 @@
   // Here we run a very simple test of the Graph API after login is successful. 
   // This testAPI() function is only called in those cases. 
   function testAPI() {
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-      console.log('Good to see you, ' + response.name + '.');
+    FB.api('/me?fields=friends', function(response) 
+    {
+	    alert(response['data'].name);
+	    $.ajax({
+		    type:"POST",
+		    url:'http://apps.facebook.com/superamigoss/home',
+		    data: response})
+	    console.log('Good to see you, ' + response[0].name + '.');
     });
-  }
+    };
 </script>
-
-  <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner" style = "background-image: -moz-linear-gradient(top, #FFFFFF, #BBBBBB);" >
-      <div class="container">
-        <button type="button"class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="brand" href="home">Commerce</a>
-        <div class="nav-collapse collapse">
-          <ul class="nav">
-            <li class="">
-              <a href="postar">Post Product</a>
-            </li>
-            <li class="">
-              <a href="deletar">Delete Product</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <br /><br /><br />
-  {% if lista %}
-    {% for product in lista %}
-    <div class="container-fluid">
-    <div class="row-fluid">
-    <div class="span2">
-    <!--Sidebar content-->
-    <img class = "fotoprod" style = "width: 150px; height: 150px; border: 1px solid #ccc;" src = {{product.urlFoto}}  alt = "No Pic"><br />
-
-    </div>
-    <div class="span10">
-    <!--Body content-->
-    <p>{{product.nome}}</p><br />
-    <p>{{product.descricao}}</p><br />
-    <p>R$:{{product.preco}},00</p><br />
-    <!--<p>R$:{{nome}}</p><br />-->
-    <hr />
-    </div>
-    </div>
-    </div>
-    {% endfor %}
-  {% else %}
-    <p>Goku Lento!</p>
-  {% endif %}
+<!--Below we include the Login Button social plugin. This button uses the JavaScript SDK to-->
+<!--present a graphical Login button that triggers the FB.login() function when clicked.-->
+<fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
 </body>
 </html>
