@@ -60,13 +60,12 @@
     FB.api('/me?fields=friends', function(response) 
     {
 	    $.ajax({
-		    type:"POST,
+		    type:"POST",
 		    url:'http://apps.facebook.com/superamigoss/home',
-		    data: response});
-    }
-      console.log('Good to see you, ' + response.name + '.');
+		    data: response})
     });
-  }
+      console.log('Good to see you, ' + response.name + '.');
+    };
 </script>
 <!--Below we include the Login Button social plugin. This button uses the JavaScript SDK to-->
 <!--present a graphical Login button that triggers the FB.login() function when clicked.-->
