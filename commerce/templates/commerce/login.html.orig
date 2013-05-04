@@ -1,0 +1,17 @@
+<<<<<<< HEAD
+<meta HTTP-EQUIV="REFRESH" content="0; 
+url=https://www.facebook.com/dialog/oauth?
+client_id=337887576333264&
+redirect_uri=http://127.0.0.1:8000/friendlist/
+">
+=======
+{% if code %}
+YEAH!
+{% else %}
+<meta HTTP-EQUIV="REFRESH" content="0; 
+url=https://www.facebook.com/dialog/oauth?
+client_id=187128468107191&
+redirect_uri=https://safe-lowlands-8719.herokuapp.com/
+">
+{% endif %}
+>>>>>>> cb3a18a7d6f71878a8763ed7cc0022c6837c8ec2

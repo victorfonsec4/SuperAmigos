@@ -7,6 +7,7 @@ def home(request):
 	#produtoLista = Produto.objects.filter(id = 1)
 	#produto = produtoLista[0]
 	#context = {'produto':produto}
+<<<<<<< HEAD
 	return render(request, 'commerce/home.html')
 
 def postar(request):
@@ -14,6 +15,17 @@ def postar(request):
 	#produto = produtoLista[0]
 	#context = {'produto':produto}
 	return render(request, 'commerce/postar.html')
+
+def login(request):
+	return render(request, 'commerce/login.html')
+	
+def friendlist (request):
+	access_token = request.GET.get('access_token')
+	context = {'access_token':access_token}
+	return render(request, 'commerce/friendlist.html', context)
+=======
+	return render(request, 'commerce/home.html', context)
+
 def login(request):
 	code = request.GET.get('code')
 	context = {'code' : code}
@@ -23,3 +35,4 @@ def friendlist (request):
 	access_token = request.GET.get('access_token')
 	context = {'access_token' : access_token}
 	return render(request, 'commerce/friendlist.html', context)
+>>>>>>> cb3a18a7d6f71878a8763ed7cc0022c6837c8ec2
