@@ -10,7 +10,9 @@ def home(request):
 	return render(request, 'commerce/home.html', context)
 
 def login(request):
-	return render(request, 'commerce/login.html')
+	code = request.GET.get('code')
+	context = {'code' : code}
+	return render(request, 'commerce/login.html', context)
 	
 def friendlist (request):
 	access_token = request.GET.get('access_token')
