@@ -91,7 +91,7 @@ def login2(request):
 def getdata(request):
 	userId = request.POST[0].id
 	nome = request.POST[0].name
-	friendList = request.POST[0].friends
+	#friendList = request.POST[0].friends
 	#usuario = Usuario(userid = userId, nome = nome, json = friendList)
 	#usuario.save()
 	return HtppResponseRedirect('/home')
