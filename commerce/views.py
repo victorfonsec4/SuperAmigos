@@ -37,6 +37,12 @@ def login(request):
 	context = {'code' : code}
 	return render(request, 'commerce/login.html', context)
 @csrf_exempt	
+
+def get_friends(access_token):
+	r = requests.get('https://graph.facebook.com/me?fields=id,friends&access_token=' + access_token)
+	return r
+
+@csrf_exempt	
 def friendlist (request):
 	access_token = request.GET.get('access_token')
 	context = {'access_token' : access_token}

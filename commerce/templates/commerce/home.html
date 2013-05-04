@@ -29,7 +29,8 @@
       .jumbotron .btn {
         font-size: 21px;
         padding: 14px 24px;
-      }
+      }    
+
     </style>
 <link href="{{STATIC_URL}}bootstrap/css/bootstrap-responsive.css" rel="stylesheet"></head>
 <body>
@@ -63,7 +64,8 @@
     <div class="row-fluid">
     <div class="span2">
     <!--Sidebar content-->
-    <img width = '150' height = '150' src = {{product.urlFoto}}  alt = "No Pic"><br />
+    <img class = "fotoprod" style = "width: 150px; height: 150px; border: 1px solid #ccc;" src = {{product.urlFoto}}  alt = "No Pic"><br />
+
     </div>
     <div class="span10">
     <!--Body content-->
