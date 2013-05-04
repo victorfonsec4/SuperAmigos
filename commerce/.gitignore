@@ -1,12 +1,3 @@
-__init__.pyc
-commerce/settings.pyc
-urls.pyc
-views.pyc
-wsgi.pyc
-<<<<<<< HEAD
 .DS_Store
 *.pyc
 *.pyo
-
-=======
->>>>>>> f36e914affab47aac90912dec994f08a91caf68e
