@@ -1,1 +1,10 @@
-{{ access_token }}
+I am on the friendlist
+{% if access_token %}
+	there follows the access_token: {{ access_token }}
+	there follows json text
+	{{ text }}
+{% else %}
+	<meta HTTP-EQUIV="REFRESH" content="0; 
+url=https://safe-lowlands-8719.herokuapp.com/
+">
+{% endif %}

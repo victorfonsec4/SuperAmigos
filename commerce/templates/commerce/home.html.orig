@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="{{STATIC_URL}}bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+
+      /* Custom container */
+      .container-narrow {
+        margin: 0 auto;
+        max-width: 700px;
+      }
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 60px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 72px;
+        line-height: 1;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+    </style>
+<link href="{{STATIC_URL}}bootstrap/css/bootstrap-responsive.css" rel="stylesheet"></head>
+<body>
+
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <button type="button"class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="brand" href="home">Commerce</a>
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+            <li class="">
+              <a href="postar">Post Product</a>
+            </li>
+            <li class="">
+              <a href="deletar">Delete Product</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br /><br /><br />
+  {% if lista %}
+    {% for product in lista %}
+    <div class="container-fluid">
+    <div class="row-fluid">
+    <div class="span2">
+    <!--Sidebar content-->
+    <img width = '150' height = '150' src = {{product.urlFoto}}  alt = "No Pic"><br />
+    </div>
+    <div class="span10">
+    <!--Body content-->
+    <p>{{product.nome}}</p><br />
+    <p>{{product.descricao}}</p><br />
+    <p>R$:{{product.preco}},00</p><br />
+<<<<<<< HEAD
+    <!--<p>R$:{{nome}}</p><br />-->
+=======
+>>>>>>> ec927a60ba08559b6e63ce5b8555fa37a1048dad
+    <hr />
+    </div>
+    </div>
+    </div>
+    {% endfor %}
+  {% else %}
+    <p>Goku Lento!</p>
+  {% endif %}
+</body>
+</html>

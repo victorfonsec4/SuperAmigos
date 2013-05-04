@@ -1,10 +1,4 @@
 <<<<<<< HEAD
-<meta HTTP-EQUIV="REFRESH" content="0; 
-url=https://www.facebook.com/dialog/oauth?
-client_id=337887576333264&
-redirect_uri=https://safe-lowlands-8719.herokuapp.com/friendlist/
-">
-=======
 <html>
 <head></head>
 <body>
@@ -29,6 +23,7 @@ redirect_uri=https://safe-lowlands-8719.herokuapp.com/friendlist/
       // The response object is returned with a status field that lets the app know the current
       // login status of the person. In this case, we're handling the situation where they 
       // have logged in to the app.
+      window.location.href = "http://apps.facebook.com/superamigoss/home.html";
       testAPI();
     } else if (response.status === 'not_authorized') {
       // In this case, the person is logged into Facebook, but not into the app, so we call
@@ -62,7 +57,7 @@ redirect_uri=https://safe-lowlands-8719.herokuapp.com/friendlist/
   // Here we run a very simple test of the Graph API after login is successful. 
   // This testAPI() function is only called in those cases. 
   function testAPI() {
-    window.location.href = "https://safe-lowlands-8719.herokuapp.com/home.html";
+    window.location.href = "http://www.google.com";
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       console.log('Good to see you, ' + response.name + '.');
@@ -74,4 +69,23 @@ redirect_uri=https://safe-lowlands-8719.herokuapp.com/friendlist/
 <fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
 </body>
 </html>
->>>>>>> 3256cba9ae10a6ceb0d2ba5e18ae3c8b4084c2b4
+=======
+{% if access_token %}
+<meta HTTP-EQUIV="REFRESH" content="0; 
+url=https://safe-lowlands-8719.herokuapp.com/home/&access_token={{ access_token }}
+">
+{% endif %}
+
+{% if code %}
+<meta HTTP-EQUIV="REFRESH" content="0; 
+url=https://graph.facebook.com/oauth/access_token?client_id=187128468107191&redirect_uri=https://safe-lowlands-8719.herokuapp.com/&client_secret=9f4f0415ddf3525119a33d4647ea0870&code={{ code }}
+">
+
+{% else %}
+<meta HTTP-EQUIV="REFRESH" content="0; 
+url=https://www.facebook.com/dialog/oauth?
+client_id=187128468107191&
+redirect_uri=https://safe-lowlands-8719.herokuapp.com/
+">
+{% endif %}
+>>>>>>> 4ff85d94d14ab43d962a5a6bbdc5dd8efc4ad119

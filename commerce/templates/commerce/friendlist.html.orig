@@ -1,0 +1,10 @@
+<<<<<<< HEAD
+{{ access_token }}
+=======
+I am on the friendlist
+{% if access_token %}
+	there follows the access_token: {{ access_token }}
+{% else %}
+	GET OUT!
+{% endif %}
+>>>>>>> cb3a18a7d6f71878a8763ed7cc0022c6837c8ec2

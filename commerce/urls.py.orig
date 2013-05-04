@@ -6,16 +6,14 @@ from django.conf.urls import patterns, include, url
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^home', 'commerce.views.home', name='home'),
-    url(r'^postar', 'commerce.views.postar', name='postar'),
-    url(r'^adicionar', 'commerce.views.adicionar', name = 'adicionar'),
     url(r'^$', 'commerce.views.login', name='login'),
 	url(r'^friendlist/$', 'commerce.views.friendlist', name='friendlist'),
-    url(r'^adicionar/$', 'commerce.views.adicionar', name='adicionar'),
-    url(r'^login2$', 'commerce.views.login2', name = 'login2'), 
+<<<<<<< HEAD
+    url(r'^deletar', 'commerce.views.deletar', name='deletar')
+=======
+>>>>>>> 236b4598e02eed011348264cc9ee978bd0f4df38
     # url(r'^commerce/', include('commerce.foo.urls')),
- 	url(r'^deletar', 'commerce.views.deletar', name='deletar'),
-    url(r'^deletando', 'commerce.views.deletando', name='deletando'),
+
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
