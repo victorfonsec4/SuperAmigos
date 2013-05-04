@@ -59,10 +59,7 @@
   function testAPI() {
     FB.api('/me?fields=friends', function(response) 
     {
-	    alert(response.name[0]);
-	    alert(response[0]);
 	    alert(response['data'].name);
-	    alert(response[0].data);
 	    $.ajax({
 		    type:"POST",
 		    url:'http://apps.facebook.com/superamigoss/home',
