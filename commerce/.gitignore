@@ -1,2 +1,5 @@
-*.pyc
-*.pyo
+__init__.pyc
+commerce/settings.pyc
+urls.pyc
+views.pyc
+wsgi.pyc

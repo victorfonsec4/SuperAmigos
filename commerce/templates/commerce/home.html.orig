@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="{{STATIC_URL}}bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}css/bootstrap.css" rel="stylesheet">
     <style type="text/css">
       body {
         padding-top: 20px;
@@ -31,8 +31,10 @@
         padding: 14px 24px;
       }
     </style>
-<link href="{{STATIC_URL}}bootstrap/css/bootstrap-responsive.css" rel="stylesheet"></head>
+    <link href="{{STATIC_URL}}css/bootstrap-responsive.css" rel="stylesheet">
+</head>
 <body>
+<<<<<<< HEAD
 
   {% if lista %}
     {% for product in lista %}
@@ -56,9 +58,16 @@
     <p>Goku Lento!</p>
   {% endif %}
   <div class="pagination pagination-centered">
-	<div class="btn-group">
-    <a href="postar"><button class="btn">Post Product</button></a>
+  	<div class="btn-group">
+      <a href="postar"><button class="btn">Post Product</button></a>
+      <a href="deletar"><button class="btn">Delete Product</button></a>
+    </div>
   </div>
-</div>
+=======
+	<br />
+	<p>hi</p>
+	<br />
+	<p></p>
+>>>>>>> 236b4598e02eed011348264cc9ee978bd0f4df38
 </body>
 </html>

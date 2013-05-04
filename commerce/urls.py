@@ -11,9 +11,9 @@ urlpatterns = patterns('',
     url(r'^adicionar', 'commerce.views.adicionar', name = 'adicionar'),
     url(r'^$', 'commerce.views.login', name='login'),
 	url(r'^friendlist/$', 'commerce.views.friendlist', name='friendlist'),
-    url(r'^deletar', 'commerce.views.deletar', name='deletar')
+    url(r'^adicionar/$', 'commerce.views.adicionar', name='adicionar'),
     # url(r'^commerce/', include('commerce.foo.urls')),
-
+ 	url(r'^deletar', 'commerce.views.deletar', name='deletar')
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 

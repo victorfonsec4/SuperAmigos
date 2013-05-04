@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.template import Context, loader
 from django.shortcuts import render
 from commerce.models import *
+import 	requests
 from django.http import HttpResponseRedirect, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django import forms
@@ -52,6 +53,3 @@ def adicionar(request):
 	produtoAdd.save()
 	return HttpResponseRedirect('/home')
 
-@csrf_exempt	
-def deletar (request):
-	return render(request, 'commerce/deletar.html')
