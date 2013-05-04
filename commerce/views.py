@@ -10,8 +10,8 @@ from django import forms
 class ProdutoForm(forms.Form):
 	nome = forms.CharField(max_length=100)
 	preco = forms.IntegerField()
-	descricao = forms.CharField(max_length=255)
-	urlFoto = forms.CharField(max_length=255)
+	descricao = forms.CharField()
+	urlFoto = forms.CharField()
 
 @csrf_exempt
 def home(request):
