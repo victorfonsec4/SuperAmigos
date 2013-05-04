@@ -20,14 +20,16 @@ class DeleteForm(forms.Form):
 
 @csrf_exempt
 def home(request):
-	#access_token = request.GET.get('access_token')
-	#listaAmigos = get_friends(access_token).json()['friends']['data']
 	lista = []
-	#listaNome = []
-	#for amigo in listaAmigos:
-	#	lista.extend(Produto.objects.filter(usuario = amigo['id']))
-		#listaNome.extend(amigo['name'])
-	lista.extend(Produto.objects.filter(usuario = 1))
+	if request.method == 'POST':
+		listaAmigos = request.GET.get('response')
+		#listaAmigos = get_friends(access_token).json()['friends']['data']
+		#listaNome = []
+		for amigo in listaAmigos:
+			lista.extend(Produto.objects.filter(usuario = amigo['id']))
+			#listaNome.extend(amigo['name'])
+	else
+		lista.extend(Produto.objects.filter(usuario = 1))
 	#listaFinal = (lista, listaNome)
 	#context = {'lista':listaFinal}
 	context = {'lista' : lista}

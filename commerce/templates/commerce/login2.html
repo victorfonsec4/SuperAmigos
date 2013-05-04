@@ -57,13 +57,13 @@
   // Here we run a very simple test of the Graph API after login is successful. 
   // This testAPI() function is only called in those cases. 
   function testAPI() {
-    $.ajax({
-	    type:"POST"
-	    url:"https://safe-lowlands-8719.herokuapp.com/home.html",
-	    data:
-    window.location.href = "https://safe-lowlands-8719.herokuapp.com/home.html";
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
+    FB.api('/me?fields=friends', function(response) 
+    {
+	    $.ajax({
+		    type:"POST,
+		    url:'http://apps.facebook.com/superamigoss/home',
+		    data: response});
+    }
       console.log('Good to see you, ' + response.name + '.');
     });
   }
