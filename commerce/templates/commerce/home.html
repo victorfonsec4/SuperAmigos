@@ -33,12 +33,24 @@
     </style>
 <link href="{{STATIC_URL}}bootstrap/css/bootstrap-responsive.css" rel="stylesheet"></head>
 <body>
+
   {% if lista %}
     {% for product in lista %}
+    <div class="container-fluid">
+    <div class="row-fluid">
+    <div class="span2">
+    <!--Sidebar content-->
+    <img src = {{product.urlFoto}} width = '150' height = '150' alt = "No Pic"><br />
+    </div>
+    <div class="span10">
+    <!--Body content-->
     <p>{{product.nome}}</p><br />
-    <p>{{product.preco}}</p><br />
     <p>{{product.descricao}}</p><br />
-    <p>{{product.urlFoto}}</p><br />
+    <p>{{product.preco}}</p><br />
+    <hr />
+    </div>
+    </div>
+    </div>
     {% endfor %}
   {% else %}
     <p>Goku Lento!</p>

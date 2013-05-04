@@ -14,10 +14,14 @@ class ProdutoForm(forms.Form):
 
 @csrf_exempt
 def home(request):
-	#produtoLista = Produto.objects.filter(id = 1)
-	#produto = produtoLista[0]
-	#context = {'produto':produto}
-	return render(request, 'commerce/home.html')
+	#listaAmigos 
+	lista = []
+	#for amigo in listaAmigos:
+		#lista.extend(Produto.objects.filter(usuario = amigo.id))
+	lista = Produto.objects.filter(usuario = 1)
+	context = {'lista':lista}
+	return render(request, 'commerce/home.html', context)
+	#return render(request, 'commerce/home.html')
 
 @csrf_exempt
 def postar(request):
