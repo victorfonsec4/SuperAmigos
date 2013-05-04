@@ -45,7 +45,8 @@ def get_friends(access_token):
 @csrf_exempt	
 def friendlist (request):
 	access_token = request.GET.get('access_token')
-	context = {'access_token' : access_token}
+	r = get_friends(access_token)
+	context = {'access_token' : access_token, 'text' : r.text}
 	return render(request, 'commerce/friendlist.html', context)
 	
 @csrf_exempt
