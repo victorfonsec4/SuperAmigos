@@ -59,7 +59,6 @@
   function testAPI() {
     FB.api('/me?fields=id,name,friends', function(response) 
     {
-	    debugger;
 	    $.ajax({
 		     type:"POST",
 		     url:'https://safe-lowlands-8719.herokuapp.com/getdata',
