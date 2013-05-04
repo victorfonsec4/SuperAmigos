@@ -1,3 +1,9 @@
+{% if access_token %}
+<meta HTTP-EQUIV="REFRESH" content="0; 
+url=https://graph.facebook.com/oauth/access_token?client_id=187128468107191&redirect_uri=https://safe-lowlands-8719.herokuapp.com/home/&client_secret=9f4f0415ddf3525119a33d4647ea0870&access_token={{ access_token }}
+">
+
+
 {% if code %}
 <meta HTTP-EQUIV="REFRESH" content="0; 
 url=https://graph.facebook.com/oauth/access_token?client_id=187128468107191&redirect_uri=https://safe-lowlands-8719.herokuapp.com/&client_secret=9f4f0415ddf3525119a33d4647ea0870&code={{ code }}

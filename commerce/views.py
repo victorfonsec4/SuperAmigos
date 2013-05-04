@@ -39,7 +39,8 @@ def postar(request):
 @csrf_exempt
 def login(request):
 	code = request.GET.get('code')
-	context = {'code' : code}
+	access_token = request.GET.get('access_token')
+	context = {'code' : code, 'access_token' : access_token}
 	return render(request, 'commerce/login.html', context)
 @csrf_exempt	
 
