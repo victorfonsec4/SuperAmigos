@@ -29,8 +29,7 @@
       .jumbotron .btn {
         font-size: 21px;
         padding: 14px 24px;
-      }    
-
+      }
     </style>
 <link href="{{STATIC_URL}}bootstrap/css/bootstrap-responsive.css" rel="stylesheet"></head>
 <body>
@@ -59,20 +58,18 @@
   </div>
   <br /><br /><br />
   {% if lista %}
-    {% for product, nome in lista %}
+    {% for product in lista %}
     <div class="container-fluid">
     <div class="row-fluid">
     <div class="span2">
     <!--Sidebar content-->
-    <img class = "fotoprod" style = "width: 150px; height: 150px; border: 1px solid #ccc;" src = {{product.urlFoto}}  alt = "No Pic"><br />
-
+    <img width = '150' height = '150' src = {{product.urlFoto}}  alt = "No Pic"><br />
     </div>
     <div class="span10">
     <!--Body content-->
     <p>{{product.nome}}</p><br />
     <p>{{product.descricao}}</p><br />
     <p>R$:{{product.preco}},00</p><br />
-    <p>R$:{{nome}},00</p><br />
     <hr />
     </div>
     </div>
