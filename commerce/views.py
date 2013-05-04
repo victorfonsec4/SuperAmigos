@@ -48,3 +48,6 @@ def adicionar(request):
 	produtoAdd.save()
 	return HttpResponseRedirect('/home')
 
+@csrf_exempt	
+def deletar (request):
+	return render(request, 'commerce/deletar.html')
