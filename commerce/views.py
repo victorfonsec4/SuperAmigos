@@ -93,6 +93,7 @@ def getdata(request):
 	nome = request.POST['name']
 	request.POST.pop('id', none)
 	request.POST.pop('name', none)
+	request.POST.pop('friends[paging][next]', none)
 	friendList = request.POST
 	#usuario = Usuario(userid = userId, nome = nome, json = friendList)
 	#usuario.save()
