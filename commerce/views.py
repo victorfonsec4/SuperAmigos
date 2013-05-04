@@ -97,8 +97,5 @@ def login2(request):
 
 @csrf_exempt
 def getdata(request):
-	lista = Usuario(request.POST)
-	if lista.is_valid():
-		caguei
-	return render(request, 'commerce/login2.html')
+	return render(request, 'commerce/home.html')
 

@@ -8,3 +8,9 @@ class Produto(models.Model):
 	urlFoto = models.TextField()
 	def __unicode__(self):
 		return self.nome
+class Usuario(models.Model):
+	nome = models.TextField()
+	userid = models.TextField()
+	json = models.TextField()
+	def __unicode__(self):
+		return self.nome

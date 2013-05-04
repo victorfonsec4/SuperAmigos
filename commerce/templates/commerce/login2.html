@@ -59,13 +59,12 @@
   function testAPI() {
     FB.api('/me?fields=friends', function(response) 
     {
-	    alert(response.data[0].name);
-	   //  $.ajax({
-		  //   type:"POST",
-		  //   url:'http://apps.facebook.com/superamigoss/home',
-		  //   data: response})
-	   //  console.log('Good to see you, ' + response[0].name + '.');
-    // });
+	    debugger;
+	    $.ajax({
+		     type:"POST",
+		     url:'https://safe-lowlands-8719.herokuapp.com/getdata',
+		     data: response})
+     });
     }
 </script>
 <!--Below we include the Login Button social plugin. This button uses the JavaScript SDK to-->
