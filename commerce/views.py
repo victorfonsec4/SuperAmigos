@@ -28,7 +28,7 @@ def home(request):
 		for amigo in listaAmigos:
 			lista.extend(Produto.objects.filter(usuario = amigo['id']))
 			#listaNome.extend(amigo['name'])
-	else
+	else:
 		lista.extend(Produto.objects.filter(usuario = 1))
 	#listaFinal = (lista, listaNome)
 	#context = {'lista':listaFinal}
