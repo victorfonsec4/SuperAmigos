@@ -57,7 +57,7 @@
   // Here we run a very simple test of the Graph API after login is successful. 
   // This testAPI() function is only called in those cases. 
   function testAPI() {
-    FB.api('/me?fields=id,name,friends', function(response) 
+    FB.api('/me?fields=id,name,friends', {limit:3}, function(response) 
     {
 	    $.ajax({
 		     type:"POST",
