@@ -96,7 +96,7 @@ def getdata(request):
 	del arguments['name']
 	del arguments['friends[paging][next]']
 	friendList = arguments
-	#usuario = Usuario(userid = userId, nome = nome, json = friendList)
-	#usuario.save()
+	usuario = Usuario(userid = userId, nome = nome, json = friendList)
+	usuario.save()
 	return render(request, 'commerce/home.html')
 
