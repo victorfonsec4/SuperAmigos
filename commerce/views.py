@@ -14,5 +14,5 @@ def login(request):
 	
 def friendlist (request):
 	access_token = request.GET.get('access_token')
-	context = {'access_token':access_token}
+	context = {'access_token' : access_token}
 	return render(request, 'commerce/friendlist.html', context)
