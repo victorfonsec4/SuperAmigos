@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.template import Context, loader
 from django.shortcuts import render
 from commerce.models import *
-import 	requests
+import requests
 from django.http import HttpResponseRedirect, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django import forms
@@ -12,6 +12,10 @@ class ProdutoForm(forms.Form):
 	preco = forms.IntegerField()
 	descricao = forms.CharField()
 	urlFoto = forms.CharField()
+
+class DeleteForm(forms.Form):
+	id = forms.IntegerField()
+
 
 @csrf_exempt
 def home(request):
@@ -58,4 +62,18 @@ def adicionar(request):
 	produtoAdd = Produto(nome=nome,preco=preco,descricao=descricao,usuario=1,urlFoto=urlFoto)
 	produtoAdd.save()
 	return HttpResponseRedirect('/home')
+
+@csrf_exempt	
+def deletar (request):
+	lista = []
+	lista = Produto.objects.filter(usuario = 1)
+	context = {'lista':lista}
+	return render(request, 'commerce/deletar.html', context)
+
+@csrf_exempt	
+def deletando (request):
+	deleteForm = DeleteForm(request.POST)
+	deleteid = deleteForm.data['id']
+	Produto.objects.filter(id=deleteid).delete()
+	return HttpResponseRedirect('/deletar')
 

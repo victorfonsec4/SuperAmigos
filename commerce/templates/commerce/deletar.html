@@ -34,8 +34,56 @@
     <link href="{{STATIC_URL}}bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 </head>
 <body>
-  {% for produto in lista %}
-    <p>{{produto}}</p>
-  {% endfor %}
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <button type="button"class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="brand" href="home">Commerce</a>
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+            <li class="">
+              <a href="postar">Post Product</a>
+            </li>
+            <li class="">
+              <a href="deletar">Delete Product</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br /><br /><br />
+  {% if lista %}
+    {% for product in lista %}
+    <div class="container-fluid">
+    <div class="row-fluid">
+    <div class="span2">
+    <!--Sidebar content-->
+    <img class = "fotoprod" style = "width: 150px; height: 150px; border: 1px solid #ccc;" src = {{product.urlFoto}}  alt = "No Pic"><br />
+
+    </div>
+    <div class="span5">
+    <!--Body content-->
+    <p>{{product.nome}}</p><br />
+    <p>{{product.descricao}}</p><br />
+    <p>R$:{{product.preco}},00</p><br />
+    <!--<p>R$:{{nome}}</p><br />-->
+    <hr />
+    </div class="span2">
+      <form class="navbar-form" action="deletando/" method="post">
+        <button type='submit'name='id' value={{product.id}}>Delete</button>
+      </form>
+    <div>
+    </div>
+    </div>
+    </div>
+    {% endfor %}
+  {% else %}
+    <p>Goku Lento!</p>
+  {% endif %}
 </body>
 </html>
