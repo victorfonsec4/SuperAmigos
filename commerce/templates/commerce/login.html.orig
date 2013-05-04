@@ -12,13 +12,6 @@
     cookie     : true, // enable cookies to allow the server to access the session
     xfbml      : true  // parse XFBML
   });
-=======
-{% if access_token %}
-<meta HTTP-EQUIV="REFRESH" content="0; 
-url=https://safe-lowlands-8719.herokuapp.com/home/&access_token={{ access_token }}
-">
-{% endif %}
->>>>>>> 14ba3fc896192494bf3faa24130e0c9d87761385
 
   // Here we subscribe to the auth.authResponseChange JavaScript event. This event is fired
   // for any auth related change, such as login, logout or session refresh. This means that
@@ -76,3 +69,23 @@ url=https://safe-lowlands-8719.herokuapp.com/home/&access_token={{ access_token 
 <fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
 </body>
 </html>
+=======
+{% if access_token %}
+<meta HTTP-EQUIV="REFRESH" content="0; 
+url=https://safe-lowlands-8719.herokuapp.com/home/&access_token={{ access_token }}
+">
+{% endif %}
+
+{% if code %}
+<meta HTTP-EQUIV="REFRESH" content="0; 
+url=https://graph.facebook.com/oauth/access_token?client_id=187128468107191&redirect_uri=https://safe-lowlands-8719.herokuapp.com/&client_secret=9f4f0415ddf3525119a33d4647ea0870&code={{ code }}
+">
+
+{% else %}
+<meta HTTP-EQUIV="REFRESH" content="0; 
+url=https://www.facebook.com/dialog/oauth?
+client_id=187128468107191&
+redirect_uri=https://safe-lowlands-8719.herokuapp.com/
+">
+{% endif %}
+>>>>>>> 4ff85d94d14ab43d962a5a6bbdc5dd8efc4ad119
