@@ -94,5 +94,5 @@ def getdata(request):
 	friendList = request.POST[0].friends
 	#usuario = Usuario(userid = userId, nome = nome, json = friendList)
 	#usuario.save()
-	return render(request, 'commerce/home.html')
+	return HtppResponseRedirect('/home')
 
