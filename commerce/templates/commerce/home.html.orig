@@ -63,13 +63,17 @@
     <div class="row-fluid">
     <div class="span2">
     <!--Sidebar content-->
-    <img src = {{product.urlFoto}} width = '150' height = '150' alt = "No Pic"><br />
+    <img width = '150' height = '150' src = {{product.urlFoto}}  alt = "No Pic"><br />
     </div>
     <div class="span10">
     <!--Body content-->
     <p>{{product.nome}}</p><br />
     <p>{{product.descricao}}</p><br />
-    <p>{{product.preco}}</p><br />
+    <p>R$:{{product.preco}},00</p><br />
+<<<<<<< HEAD
+    <!--<p>R$:{{nome}}</p><br />-->
+=======
+>>>>>>> ec927a60ba08559b6e63ce5b8555fa37a1048dad
     <hr />
     </div>
     </div>
@@ -78,13 +82,5 @@
   {% else %}
     <p>Goku Lento!</p>
   {% endif %}
-<<<<<<< HEAD
-  <div class="pagination pagination-centered">
-	<div class="btn-group">
-    <a href="postar"><button class="btn">Post Product</button></a>
-  </div>
-</div>
-=======
->>>>>>> 3746ff0f7699ca9863436ce89d200bc5aba735f7
 </body>
 </html>
