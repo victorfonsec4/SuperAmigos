@@ -89,8 +89,8 @@ def login2(request):
 
 @csrf_exempt
 def getdata(request):
-	userId = request.POST[0].id
-	nome = request.POST[0].name
+	userId = request.POST.id
+	nome = request.POST.name
 	#friendList = request.POST[0].friends
 	#usuario = Usuario(userid = userId, nome = nome, json = friendList)
 	#usuario.save()
