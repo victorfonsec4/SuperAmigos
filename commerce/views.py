@@ -89,12 +89,13 @@ def login2(request):
 
 @csrf_exempt
 def getdata(request):
-	userId = request.POST['id']
-	nome = request.POST['name']
-	request.POST.pop('id')
-	request.POST.pop('name')
-	request.POST.pop('friends[paging][next]')
-	friendList = request.POST
+	arguments = request.POST
+	userId = arguments['id']
+	nome = arguments['name']
+	arguments.pop('id')
+	arguments.pop('name')
+	arguments.pop('friends[paging][next]')
+	friendList = arguments
 	#usuario = Usuario(userid = userId, nome = nome, json = friendList)
 	#usuario.save()
 	return render(request, 'commerce/home.html')
