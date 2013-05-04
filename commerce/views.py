@@ -8,3 +8,9 @@ def home(request):
 	#produto = produtoLista[0]
 	#context = {'produto':produto}
 	return render(request, 'commerce/home.html')
+
+def postar(request):
+	#produtoLista = Produto.objects.filter(id = 1)
+	#produto = produtoLista[0]
+	#context = {'produto':produto}
+	return render(request, 'commerce/postar.html')
