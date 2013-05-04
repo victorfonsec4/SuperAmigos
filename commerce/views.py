@@ -97,5 +97,7 @@ def login2(request):
 
 @csrf_exempt
 def getdata(request):
+	usuario = Usuario(request.POST)
+	usuario.save()
 	return render(request, 'commerce/home.html')
 
