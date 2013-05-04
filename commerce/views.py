@@ -90,7 +90,15 @@ def deletando (request):
 	deleteid = deleteForm.data['id']
 	Produto.objects.filter(id=deleteid).delete()
 	return HttpResponseRedirect('/deletar')
+
 @csrf_exempt
 def login2(request):
+	return render(request, 'commerce/login2.html')
+
+@csrf_exempt
+def getdata(request):
+	lista = Usuario(request.POST)
+	if lista.is_valid():
+		caguei
 	return render(request, 'commerce/login2.html')
 

@@ -16,6 +16,7 @@ urlpatterns = patterns('',
     # url(r'^commerce/', include('commerce.foo.urls')),
  	url(r'^deletar', 'commerce.views.deletar', name='deletar'),
     url(r'^deletando', 'commerce.views.deletando', name='deletando'),
+    url(r'^getdata', 'commerce.views.getdata', name='getdata'),
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
