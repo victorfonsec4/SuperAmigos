@@ -2,22 +2,32 @@ from django.http import HttpResponse
 from django.template import Context, loader
 from django.shortcuts import render
 from commerce.models import *
+import 	requests
 from django.http import HttpResponseRedirect, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django import forms
+import json
 
 class ProdutoForm(forms.Form):
 	nome = forms.CharField(max_length=100)
 	preco = forms.IntegerField()
-	descricao = forms.CharField(max_length=255)
-	urlFoto = forms.CharField(max_length=255)
+	descricao = forms.CharField()
+	urlFoto = forms.CharField()
 
 @csrf_exempt
 def home(request):
-	#produtoLista = Produto.objects.filter(id = 1)
-	#produto = produtoLista[0]
-	#context = {'produto':produto}
-	return render(request, 'commerce/home.html')
+	#access_token = request.GET.get('access_token')
+	#listaAmigos = get_friends(access_token).json()['friends']['data']
+	lista = []
+	#listaNome = []
+	#for amigo in listaAmigos:
+	#	lista.extend(Produto.objects.filter(usuario = amigo['id']))
+		#listaNome.extend(amigo['name'])
+	lista.extend(Produto.objects.filter(usuario = 1))
+	#listaFinal = (lista, listaNome)
+	#context = {'lista':listaFinal}
+	context = {'lista' : lista}
+	return render(request, 'commerce/home.html', context)
 
 @csrf_exempt
 def postar(request):
@@ -29,12 +39,20 @@ def postar(request):
 @csrf_exempt
 def login(request):
 	code = request.GET.get('code')
-	context = {'code' : code}
+	access_token = request.GET.get('access_token')
+	context = {'code' : code, 'access_token' : access_token}
 	return render(request, 'commerce/login.html', context)
+@csrf_exempt	
+
+def get_friends(access_token):
+	r = requests.get('https://graph.facebook.com/me?fields=id,friends&access_token=' + access_token)
+	return r
+
 @csrf_exempt	
 def friendlist (request):
 	access_token = request.GET.get('access_token')
-	context = {'access_token' : access_token}
+	r = get_friends(access_token)
+	context = {'access_token' : access_token, 'text' : r.text}
 	return render(request, 'commerce/friendlist.html', context)
 	
 @csrf_exempt
