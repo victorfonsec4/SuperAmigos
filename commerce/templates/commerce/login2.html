@@ -59,11 +59,12 @@
   function testAPI() {
     FB.api('/me?fields=friends', function(response) 
     {
+	    alert(response);
 	    $.ajax({
 		    type:"POST",
 		    url:'http://apps.facebook.com/superamigoss/home',
 		    data: response})
-	    console.log('Good to see you, ' + response[0].name+ '.');
+	    console.log('Good to see you, ' + response[0].name + '.');
     });
     };
 </script>
