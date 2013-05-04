@@ -4,3 +4,6 @@ urls.pyc
 views.pyc
 wsgi.pyc
 .DS_Store
+*.pyc
+*.pyo
+

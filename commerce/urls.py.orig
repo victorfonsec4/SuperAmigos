@@ -6,12 +6,13 @@ from django.conf.urls import patterns, include, url
 
 urlpatterns = patterns('',
     # Examples:
+<<<<<<< HEAD
     url(r'^home', 'commerce.views.home', name='home'),
     url(r'^postar', 'commerce.views.postar', name='postar'),
-    url(r'^adicionar', 'commerce.views.adicionar', name = 'adicionar'),
+=======
+>>>>>>> cb3a18a7d6f71878a8763ed7cc0022c6837c8ec2
     url(r'^$', 'commerce.views.login', name='login'),
 	url(r'^friendlist/$', 'commerce.views.friendlist', name='friendlist'),
-    url(r'^adicionar/$', 'commerce.views.adicionar', name='adicionar'),
     # url(r'^commerce/', include('commerce.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

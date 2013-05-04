@@ -2,7 +2,6 @@ from django.http import HttpResponse
 from django.template import Context, loader
 from django.shortcuts import render
 from commerce.models import *
-from django.http import HttpResponseRedirect, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django import forms
 
@@ -25,16 +24,26 @@ def postar(request):
 	#produto = produtoLista[0]
 	#context = {'produto':produto}
 	return render(request, 'commerce/postar.html')
-
-@csrf_exempt
+<<<<<<< HEAD
 def login(request):
 	code = request.GET.get('code')
 	context = {'code' : code}
 	return render(request, 'commerce/login.html', context)
-@csrf_exempt	
+	
 def friendlist (request):
 	access_token = request.GET.get('access_token')
 	context = {'access_token' : access_token}
+	return render(request, 'commerce/friendlist.html', context)
+=======
+
+@csrf_exempt
+def login(request):
+	return render(request, 'commerce/login.html')
+
+@csrf_exempt
+def friendlist (request):
+	access_token = request.GET.get('access_token')
+	context = {'access_token':access_token}
 	return render(request, 'commerce/friendlist.html', context)
 	
 @csrf_exempt
@@ -46,5 +55,7 @@ def adicionar(request):
 	urlFoto = produtoForm.data['urlFoto']
 	produtoAdd = Produto(nome=nome,preco=preco,descricao=descricao,usuario=1,urlFoto=urlFoto)
 	produtoAdd.save()
-	return HttpResponseRedirect('/home')
+	return render(request, 'commerce/home.html')
 
+
+>>>>>>> 5ed988ae0b3cc4e8a872f823513523d1cd2a33e6
