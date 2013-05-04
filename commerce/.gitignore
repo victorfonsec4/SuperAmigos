@@ -3,3 +3,4 @@ commerce/settings.pyc
 urls.pyc
 views.pyc
 wsgi.pyc
+.DS_Store
