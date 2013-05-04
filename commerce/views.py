@@ -43,7 +43,7 @@ def postar(request):
 @csrf_exempt
 def login(request):
 	code = request.GET.get('code')
-	if code == Null:
+	if code == None:
 		return render(request, 'commerce/login.html')
 	r = request.get('https://graph.facebook.com/oauth/access_token?client_id=187128468107191&redirect_uri=https://safe-lowlands-8719.herokuapp.com/&client_secret=9f4f0415ddf3525119a33d4647ea0870&code=' + code)	
 	context = { 'access_token' : r.json() }
