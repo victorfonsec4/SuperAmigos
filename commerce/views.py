@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.template import Context, loader
 from django.shortcuts import render
 from commerce.models import *
+import 	requests
 
 def home(request):
 	#produtoLista = Produto.objects.filter(id = 1)
