@@ -35,6 +35,14 @@
 <link href="{{STATIC_URL}}bootstrap/css/bootstrap-responsive.css" rel="stylesheet"></head>
 <body>
 <script>
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '187128468107191', // App ID
+    channelUrl : 'http://apps.facebook.com/superamigoss/home.html', // Channel File
+    status     : true, // check login status
+    cookie     : true, // enable cookies to allow the server to access the session
+    xfbml      : true  // parse XFBML
+  });
  FB.api('/me', function(response) {
       console.log('Good to see you, ' + response.name + '.');
     });
