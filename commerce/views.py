@@ -92,9 +92,9 @@ def getdata(request):
 	arguments = request.POST
 	userId = arguments['id']
 	nome = arguments['name']
-	arguments.pop('id')
-	arguments.pop('name')
-	arguments.pop('friends[paging][next]')
+	del arguments['id']
+	del arguments['name']
+	del arguments['friends[paging][next]']
 	friendList = arguments
 	#usuario = Usuario(userid = userId, nome = nome, json = friendList)
 	#usuario.save()
