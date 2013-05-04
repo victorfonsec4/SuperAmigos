@@ -89,7 +89,7 @@ def login2(request):
 
 @csrf_exempt
 def getdata(request):
-	arguments = request.POST
+	arguments = request.POST.copy()
 	userId = arguments['id']
 	nome = arguments['name']
 	del arguments['id']
