@@ -91,7 +91,9 @@ def login2(request):
 def getdata(request):
 	userId = request.POST['id']
 	nome = request.POST['name']
-	friendList = request.POST['friends']['data']
+	request.POST.pop('id', none)
+	request.POST.pop('name', none)
+	friendList = request.POST
 	#usuario = Usuario(userid = userId, nome = nome, json = friendList)
 	#usuario.save()
 	return render(request, 'commerce/home.html')
