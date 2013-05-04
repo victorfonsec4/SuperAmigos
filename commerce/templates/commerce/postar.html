@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="{{STATIC_URL}}bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}bootstrap/css/bootstrap.css" rel="stylesheet">
     <style type="text/css">
       body {
         padding-top: 20px;
@@ -31,12 +31,17 @@
         padding: 14px 24px;
       }
     </style>
-<link href="{{STATIC_URL}}bootstrap/css/bootstrap-responsive.css" rel="stylesheet"></head>
+    <link href="{{STATIC_URL}}bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+</head>
 <body>
-  <div class="pagination pagination-centered">
-	<div class="btn-group">
-    <a href="postar"><button class="btn">Post Product</button></a>
+  <div class="container">
+  	<form class="navbar-form" action="adicionar" method="post">
+      <input type="text" class="span2" placeholder="Nome" id="nome"><br />
+      <input type="text" class="span2" placeholder="Preço" id="preco"><br />
+      <input type="text" class="span2" placeholder="Descrição" id="descricao"><br />
+      <input type="text" class="span2" placeholder="url Foto" id="foto"><br />
+      <button type="submit" class="btn">Submit</button>
+    </form>
   </div>
-</div>
 </body>
 </html>
