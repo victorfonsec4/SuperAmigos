@@ -84,6 +84,6 @@ def deletando (request):
 	Produto.objects.filter(id=deleteid).delete()
 	return HttpResponseRedirect('/deletar')
 @csrf_exempt
-def login2(request);
+def login2(request):
 	return render(request, 'commerce/login2.html')
 
