@@ -34,6 +34,11 @@
     </style>
 <link href="{{STATIC_URL}}bootstrap/css/bootstrap-responsive.css" rel="stylesheet"></head>
 <body>
+<script>
+ FB.api('/me', function(response) {
+      console.log('Good to see you, ' + response.name + '.');
+    });
+</script>
 
   <div class="navbar navbar-fixed-top">
     <div class="navbar-inner" style = "background-image: -moz-linear-gradient(top, #FFFFFF, #BBBBBB);" >
