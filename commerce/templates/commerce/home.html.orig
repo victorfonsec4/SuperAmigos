@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="{{STATIC_URL}}css/bootstrap.css" rel="stylesheet">
+<link href="{{STATIC_URL}}bootstrap/css/bootstrap.css" rel="stylesheet">
     <style type="text/css">
       body {
         padding-top: 20px;
@@ -31,11 +31,32 @@
         padding: 14px 24px;
       }
     </style>
-    <link href="{{STATIC_URL}}css/bootstrap-responsive.css" rel="stylesheet">
-</head>
+<link href="{{STATIC_URL}}bootstrap/css/bootstrap-responsive.css" rel="stylesheet"></head>
 <body>
-<<<<<<< HEAD
 
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <button type="button"class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="brand" href="home">Commerce</a>
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+            <li class="">
+              <a href="postar">Post Product</a>
+            </li>
+            <li class="">
+              <a href="deletar">Delete Product</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br /><br /><br />
   {% if lista %}
     {% for product in lista %}
     <div class="container-fluid">
@@ -57,17 +78,13 @@
   {% else %}
     <p>Goku Lento!</p>
   {% endif %}
+<<<<<<< HEAD
   <div class="pagination pagination-centered">
-  	<div class="btn-group">
-      <a href="postar"><button class="btn">Post Product</button></a>
-      <a href="deletar"><button class="btn">Delete Product</button></a>
-    </div>
+	<div class="btn-group">
+    <a href="postar"><button class="btn">Post Product</button></a>
   </div>
+</div>
 =======
-	<br />
-	<p>hi</p>
-	<br />
-	<p></p>
->>>>>>> 236b4598e02eed011348264cc9ee978bd0f4df38
+>>>>>>> 3746ff0f7699ca9863436ce89d200bc5aba735f7
 </body>
 </html>
